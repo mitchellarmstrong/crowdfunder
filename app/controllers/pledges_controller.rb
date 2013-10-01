@@ -1,6 +1,6 @@
 class PledgesController < ApplicationController
-	before filter :require_login
-	before filter :require_project
+	before_filter :require_login
+	before_filter :require_project
 
 	def new
 		@pledge = @project.pledges.build
@@ -22,4 +22,5 @@ class PledgesController < ApplicationController
 	def require_project
 		@project = Project.find params[:project_id]
 	end
+	
 end
