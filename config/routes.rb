@@ -2,8 +2,11 @@ Crowdfunder::Application.routes.draw do
 
   resources :projects
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions
   root :to => "welcome#index"
+
+match "login" => "sessions#new", :as => :login
+match "logout" => "sessions#destroy", :as => :logout
 
 
   # The priority is based upon order of creation:
