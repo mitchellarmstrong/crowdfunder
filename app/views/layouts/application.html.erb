@@ -11,9 +11,13 @@
 
 <%= render 'layouts/shared/nav' %>
 
+<% if flash[:notice] %>
+	<p class="welcome"> <%= flash[:notice] %></p>
+<% end %>
+
 	<div class="container">
 		<%= yield %>
 	</div>
-	
+
 </body>
 </html>

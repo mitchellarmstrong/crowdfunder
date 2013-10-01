@@ -1,0 +1,26 @@
+class UsersController < ApplicationController
+	def index
+	end
+
+	def show
+		@user = User.find(params[:user])
+
+	end
+
+	def new
+		@user = User.new
+	end
+
+	def create
+		@user = User.new(params[:user])
+
+		if @user.save
+			
+			redirect_to root_path, :notice => "Account created"
+
+		else
+			render :new
+		end
+	end
+
+end
