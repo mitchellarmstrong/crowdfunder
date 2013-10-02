@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 		:format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i},
 		:uniqueness => true
 
+	def name
+		"#{self.(first_name)} #{self.(last_name)}"
+	end
+
 end
