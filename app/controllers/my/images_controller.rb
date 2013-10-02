@@ -19,6 +19,7 @@ class My::ImagesController < ApplicationController
     end
   end
 
+
   protected
 
   def require_project
