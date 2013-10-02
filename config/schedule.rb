@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
- every 2.minutes do
+ every 1.day do
    rake "mail:project_status"
  end
 
