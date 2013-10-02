@@ -6,10 +6,14 @@ Crowdfunder::Application.routes.draw do
   resources :users
   resources :sessions
 
+
   root :to => "welcome#index"
 
   namespace :my do 
-    resources :projects # => My::ProjectsController
+    resources :projects do
+    resources :images # => My::ProjectsController
+    end
+    
   end
 
 match "login" => "sessions#new", :as => :login
